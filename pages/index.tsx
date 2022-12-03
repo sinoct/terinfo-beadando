@@ -1,5 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { NextPage } from "next";
+import Header from "../components/Header";
 
 import dynamic from "next/dynamic";
 
@@ -10,7 +11,8 @@ const MapWithNoSSR = dynamic(() => import("../components/Map"), {
 const HomePage: NextPage = () => {
   return (
     <div>
-      <div className="w-screen h-[300px]">
+      <Header />
+      <div className="w-full h-[300px]">
         <MapWithNoSSR />
       </div>
     </div>

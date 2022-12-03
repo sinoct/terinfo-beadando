@@ -12,8 +12,12 @@ const HomePage: NextPage = () => {
   return (
     <div>
       <Header />
-      <div className="w-full h-[300px]">
-        <MapWithNoSSR />
+      <div className="w-full flex justify-center items-center flex-col">
+        <div className="text-3xl font bold py-4">Térinformatika Beadandó</div>
+        <div className="text-xl py-4">Erős Gergő, I0U2ZO</div>
+        <div className="w-2/3 h-[500px] py-4">
+          <MapWithNoSSR />
+        </div>
       </div>
     </div>
   );

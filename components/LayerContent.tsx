@@ -2,24 +2,8 @@
 import { FunctionComponent } from "react";
 
 import oradeaJSON from "./OradeaJSON";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  useMap,
-  Popup,
-  LayerGroup,
-  LayersControl,
-  Circle,
-  FeatureGroup,
-  Rectangle,
-  GeoJSON,
-} from "react-leaflet";
-import L, {
-  LatLngBoundsExpression,
-  LatLngExpression,
-  LatLngLiteral,
-} from "leaflet";
+import { Marker, Popup, Circle, GeoJSON } from "react-leaflet";
+import L, { LatLngExpression } from "leaflet";
 import { GeoJsonObject } from "geojson";
 const myIcon = L.icon({
   iconUrl: "marker.png",
@@ -34,12 +18,6 @@ const parkIcon = L.icon({
 
 const LayerContent: FunctionComponent = () => {
   const geoJSON = oradeaJSON as GeoJsonObject;
-
-  const center = [47.05589565435125, 21.927716398570823];
-  const rectangle = [
-    [51.49, -0.08],
-    [51.5, -0.06],
-  ];
   return (
     <div>
       <GeoJSON key={"geo"} data={geoJSON}></GeoJSON>
@@ -164,6 +142,18 @@ const LayerContent: FunctionComponent = () => {
           </div>
         </Popup>
       </Marker>
+      <Circle
+        center={[47.05495914512281, 21.928719338119322] as LatLngExpression}
+        pathOptions={{ fillColor: "green" }}
+        radius={70}
+      >
+        <Popup>
+          <div className="h-64 w-64 flex flex-col items-center justify-center text-center">
+            <img src="images/unirii.jpg" alt="" />
+            Nagyvárad főtere
+          </div>
+        </Popup>
+      </Circle>
     </div>
   );
 };

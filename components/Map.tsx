@@ -1,43 +1,17 @@
-import { useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
-import oradeaJSON from "./OradeaJSON";
 import LayerContent from "./LayerContent";
 
 import {
   MapContainer,
   TileLayer,
-  Marker,
-  useMap,
-  Popup,
   LayerGroup,
   LayersControl,
-  Circle,
-  FeatureGroup,
-  Rectangle,
-  GeoJSON,
 } from "react-leaflet";
-import L, {
-  LatLngBoundsExpression,
-  LatLngExpression,
-  LatLngLiteral,
-} from "leaflet";
-import { GeoJsonObject } from "geojson";
-
-const myIcon = L.icon({
-  iconUrl: "marker.png",
-  iconSize: [24, 38],
-  iconAnchor: [24, 38],
-});
+import L, { LatLngExpression } from "leaflet";
 
 export default function Map() {
-  const [geoData, setGeoData] = useState({ lat: 64.536634, lng: 16.779852 });
-  const geoJSON = oradeaJSON as GeoJsonObject;
-
   const center = [47.05589565435125, 21.927716398570823];
-  const rectangle = [
-    [51.49, -0.08],
-    [51.5, -0.06],
-  ];
+
   return (
     <MapContainer
       center={center as LatLngExpression}

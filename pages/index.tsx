@@ -18,10 +18,10 @@ const HomePage: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />
-      <div className="w-full flex justify-center items-center flex-col">
+      <div className="w-full flex justify-center items-center flex-col text-center">
         <div className="text-3xl font bold py-4">Térinformatika Beadandó</div>
         <div className="text-xl py-4">Erős Gergő, I0U2ZO</div>
-        <div className="w-2/3 h-[600px] py-4">
+        <div className="w-full sm:w-2/3 h-[600px] py-4">
           <MapWithNoSSR />
         </div>
       </div>
